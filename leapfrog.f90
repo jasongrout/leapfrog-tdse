@@ -67,7 +67,7 @@ program leapfrog
   do i = 1, nx
      x = xmin + i * dx
      write(3, "(1f8.4)", advance = "no"), x
-     do t = 1, nt / 2
+     do t = 1, nt / 2-1
         ! We can't use the typical norm here
         if (mod(t, 2) .eq. 0) then
            norm = psi_r(i, 2 * t - 1) ** 2 + psi_im(i, 2 * (t - 1)) * psi_im(i, 2 * (t + 1))
